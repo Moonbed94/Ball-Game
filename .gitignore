@@ -1,0 +1,17 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Godot specific files
+.import/
+.godot/
+.export/
+*.tmp
+*.gdns
+*.pck
+*.godot
+*.sconsign.dblite
+
+# OS generated files
+Thumbs.db
+.DS_Store
