@@ -1,16 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlwhccidjqet7"]
+[gd_scene load_steps=6 format=3 uid="uid://dlwhccidjqet7"]
 
-[ext_resource type="Script" path="res://Movement.gd" id="1_xnp13"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efidi"]
-albedo_color = Color(0.00784314, 0.388235, 1, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_oss4r"]
-material = SubResource("StandardMaterial3D_efidi")
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sjncm"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_uqjtv"]
+[ext_resource type="PackedScene" uid="uid://dy1qd57n7rihu" path="res://player.tscn" id="1_a5mjw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gh8ou"]
 
@@ -25,29 +15,21 @@ material = SubResource("StandardMaterial3D_qoxvx")
 
 [node name="Game" type="Node3D"]
 
-[node name="Player" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.16704, 0)
-mesh = SubResource("SphereMesh_oss4r")
-
-[node name="RigidBody3D" type="RigidBody3D" parent="Player"]
-physics_material_override = SubResource("PhysicsMaterial_sjncm")
-script = ExtResource("1_xnp13")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/RigidBody3D"]
-shape = SubResource("SphereShape3D_uqjtv")
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.471283, 0)
 physics_material_override = SubResource("PhysicsMaterial_gh8ou")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_37r31")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(9.425, 0, 0, 0, 9.425, 0, 0, 0, 9.425, 0, 0, 0)
+transform = Transform3D(9.425, 0, 0, 0, 9.425, 0, 0, 0, 9.425, 0, 0.40748, 0)
 mesh = SubResource("PlaneMesh_dtf32")
 
-[node name="Main Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.44926, 15.5375)
-
-[node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -1, 39.8909, 55.1489)
+[node name="Player" parent="." instance=ExtResource("1_a5mjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+linear_damp = 3.0
