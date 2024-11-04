@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlwhccidjqet7"]
+[gd_scene load_steps=7 format=3 uid="uid://dlwhccidjqet7"]
 
-[ext_resource type="PackedScene" uid="uid://dy1qd57n7rihu" path="res://player.tscn" id="1_a5mjw"]
+[ext_resource type="PackedScene" uid="uid://dy1qd57n7rihu" path="res://Scenes/player.tscn" id="1_ndkiu"]
+[ext_resource type="Script" path="res://Scripts/CameraFollow.gd" id="2_fpq53"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gh8ou"]
 
@@ -30,6 +31,17 @@ shape = SubResource("BoxShape3D_37r31")
 transform = Transform3D(9.425, 0, 0, 0, 9.425, 0, 0, 0, 9.425, 0, 0.40748, 0)
 mesh = SubResource("PlaneMesh_dtf32")
 
-[node name="Player" parent="." instance=ExtResource("1_a5mjw")]
+[node name="Player" parent="." instance=ExtResource("1_ndkiu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-linear_damp = 3.0
+linear_damp = 1.0
+
+[node name="CameraPivot" type="Node3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("2_fpq53")
+player = NodePath("../Player")
+
+[node name="CameraRotation" type="Node3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/CameraRotation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
