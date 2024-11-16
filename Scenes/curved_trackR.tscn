@@ -1,34 +1,46 @@
-[gd_scene format=3 uid="uid://bnnb7vnbwxx12"]
+[gd_scene load_steps=2 format=3 uid="uid://bnnb7vnbwxx12"]
 
-[node name="CSGCombiner3D" type="CSGCombiner3D"]
+[sub_resource type="BoxMesh" id="BoxMesh_28hct"]
+
+[node name="CurvedTrackR" type="CSGMesh3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="CSGBox3D0" type="CSGBox3D" parent="."]
+[node name="CSGBox3D0" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 0.5, 0, 0, 0, 2, -0.155716, 5.48363e-06, -1.807)
+mesh = SubResource("BoxMesh_28hct")
 
-[node name="CSGBox3D1" type="CSGBox3D" parent="."]
+[node name="CSGBox3D1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.96962, 0, 0.347296, 0, 0.5, 0, -0.347296, 0, 1.96962, 0, 0, 0)
+mesh = SubResource("BoxMesh_28hct")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+[node name="CSGBox3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.87939, 0, 0.68404, 0, 0.5, 0, -0.68404, 0, 1.87939, 0.476128, 0, 1.72386)
+mesh = SubResource("BoxMesh_28hct")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+[node name="CSGBox3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.73205, 0, 1, 0, 0.5, 0, -1, 0, 1.73205, 1.258, 0, 3.378)
+mesh = SubResource("BoxMesh_28hct")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+[node name="CSGBox3D4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.53209, 0, 1.28558, 0, 0.5, 0, -1.28558, 0, 1.53209, 2.304, 0, 4.84)
+mesh = SubResource("BoxMesh_28hct")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+[node name="CSGBox3D5" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.28558, 0, 1.53209, 0, 0.5, 0, -1.53209, 0, 1.28558, 3.594, 0, 6.109)
+mesh = SubResource("BoxMesh_28hct")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+[node name="CSGBox3D6" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 1.73205, 0, 0.5, 0, -1.73205, 0, 1, 5.087, 0, 7.146)
+mesh = SubResource("BoxMesh_28hct")
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+[node name="CSGBox3D7" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.68404, 0, 1.87938, 0, 0.5, 0, -1.87938, 0, 0.68404, 6.739, 0, 7.912)
+mesh = SubResource("BoxMesh_28hct")
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+[node name="CSGBox3D8" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.347296, 0, 1.96962, 0, 0.5, 0, -1.96962, 0, 0.347296, 8.496, 0, 8.384)
+mesh = SubResource("BoxMesh_28hct")
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+[node name="CSGBox3D9" type="MeshInstance3D" parent="."]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 0.5, 0, -2, 0, -8.74228e-08, 10.303, 0, 8.535)
+mesh = SubResource("BoxMesh_28hct")

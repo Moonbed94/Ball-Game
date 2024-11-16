@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlwhccidjqet7"]
+[gd_scene load_steps=8 format=3 uid="uid://dlwhccidjqet7"]
 
 [ext_resource type="PackedScene" uid="uid://dy1qd57n7rihu" path="res://Scenes/player.tscn" id="1_ndkiu"]
 [ext_resource type="Script" path="res://Scripts/CameraFollow.gd" id="2_fpq53"]
+[ext_resource type="MeshLibrary" uid="uid://0p3mhtejlcp3" path="res://TrackMeshLibrary .tres" id="3_us2d3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gh8ou"]
 
@@ -45,3 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/CameraRotation"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("3_us2d3")
+cell_size = Vector3(1, 1, 1)
